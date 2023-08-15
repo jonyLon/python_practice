@@ -89,12 +89,12 @@ def editBook():
       print(library[bookIndex][keysIndex])
       if keysIndex == 4:
           newNumValue = int(input("Enter new price value: "))
-          if newNumValue == 0:
+          if newNumValue <= 0:
             raise ValueError("Wrong prise")
       elif keysIndex == 5:
           newNumValue = float(input("Enter new rating value: "))
-          if newNumValue > 5:
-            raise ValueError("Rating value can't be more then 5")
+          if newNumValue > 5 or newNumValue < 0:
+            raise ValueError("Rating value can't be more then 5 or less then 0")
       else:
           newNumValue = str(input("Enter new value: "))
       library[bookIndex][keysIndex] = newNumValue
