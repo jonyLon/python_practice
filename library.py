@@ -127,11 +127,11 @@ def addBook():
     publisher = input("Enter publisher of a book: ")
     genre = input("Enter genre of a book: ")
     price = int(input("Enter price of a book: "))
-    if price == 0:
+    if price <= 0:
       raise ValueError("Wrong prise")
     rating = float(input("Enter rating of a book: "))
-    if rating > 10:
-      raise ValueError("Rating value can't be more then 10")
+    if rating > 5 or rating < 0:
+      raise ValueError("Rating value can't be more then 5 or less then 0")
     library.append([name,autor,publisher,genre,price,rating])
     printAllBooks()
   except ValueError as ex:
